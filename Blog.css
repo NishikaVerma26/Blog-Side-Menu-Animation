@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #4b4b4b;
+	font-family: 'Muli', sans-serif;
+	overflow-x: hidden;
+	perspective: 1000px;
+	min-height: 100vh;
+	margin: 0;
+}
+
+.content {
+	background-color: #f7f1e3;
+	border: 1px solid #fff;
+	position: relative;
+	padding-bottom: 50px;
+	min-height: 100vh;
+	transform-origin: center left;
+	transition: transform 0.3s ease-in-out;
+}
+
+.content img {
+	max-width: 30%;
+}
+
+.content.active {
+	transform: translateX(200px) rotateY(20deg);
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 30px;
+}
+
+.sidebar {
+	background-color: #7158e2;
+	color: #fff;
+	padding: 10px 30px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 200px;
+	height: 100%;
+	transform: translateX(-200px);
+	transition: transform 0.3s ease-in-out;
+	z-index: 100;
+}
+
+.sidebar.active {
+	transform: translateX(0);
+}
+
+.sidebar ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.sidebar ul li {
+	letter-spacing: 1px;
+	margin: 20px 0;
+	text-transform: uppercase;
+}
+
+.sidebar ul li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+	text-decoration: underline;
+}
+
+.sidebar .menu .fa-bars {
+	display: block;
+}
+
+.sidebar .menu .fa-times {
+	display: none;
+}
+
+.sidebar.active .menu .fa-bars {
+	display: none;
+}
+
+.sidebar.active .menu .fa-times {
+	display: block;
+}
+
+.menu {
+	background-color: #7158e2;
+	color: #fff;
+	border: none;
+	font-size: 16px;
+	position: absolute;
+	top: 0;
+	right: -30px;
+	height: 30px;
+	width: 30px;
+}
+
+.menu:focus {
+	outline: none;
+}
